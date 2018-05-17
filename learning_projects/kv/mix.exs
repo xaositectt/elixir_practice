@@ -1,5 +1,6 @@
 defmodule KV.MixProject do
   use Mix.Project
+
   def project do
     [
       app: :kv,
