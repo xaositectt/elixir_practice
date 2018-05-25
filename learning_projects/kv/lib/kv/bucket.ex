@@ -1,5 +1,5 @@
 defmodule KV.Bucket do
-  use Agent
+  use Agent, restart: :temporary
 
   @doc """
   Starts a new bucket
@@ -11,6 +11,7 @@ defmodule KV.Bucket do
   @doc """
   Gets a value from the bucket by key.
   """
+  # bucket is the PID of the bucket we're using
   def get(bucket, key) do
     Agent.get(bucket, fn bucket -> Map.get(bucket, key) end)
   end
