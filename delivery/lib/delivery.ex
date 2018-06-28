@@ -1,18 +1,7 @@
 defmodule Delivery do
-  @moduledoc """
-  Documentation for Delivery.
-  """
+  use Application
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Delivery.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def start(_type, _args) do
+    Delivery.Supervisor.start_link
   end
 end

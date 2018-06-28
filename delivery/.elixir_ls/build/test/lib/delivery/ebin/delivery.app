@@ -2,7 +2,11 @@
              [{applications,[kernel,stdlib,elixir,logger]},
               {description,"delivery"},
               {modules,['Elixir.Delivery',
-                        'Elixir.Delivery.PostalCode.DataParser']},
+                        'Elixir.Delivery.PostalCode.DataParser',
+                        'Elixir.Delivery.PostalCode.Store',
+                        'Elixir.Delivery.PostalCode.Supervisor',
+                        'Elixir.Delivery.Supervisor']},
               {registered,[]},
               {vsn,"0.1.0"},
+              {mod,{'Elixir.Delivery',[]}},
               {extra_applications,[logger]}]}.
