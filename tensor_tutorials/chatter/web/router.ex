@@ -15,9 +15,11 @@ defmodule Chatter.Router do
 
   scope "/", Chatter do
     pipe_through :browser # Use the default browser stack
-
+    resources "/users", UserController
     get "/", PageController, :index
   end
+
+
 
   # Other scopes may use custom stacks.
   # scope "/api", Chatter do
