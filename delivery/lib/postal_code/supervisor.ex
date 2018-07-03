@@ -1,6 +1,6 @@
 defmodule Delivery.PostalCode.Supervisor do
   use Supervisor
-  alias Delivery.PostalCode.Store
+  alias Delivery.PostalCode.{Store, Navigator, Cache}
 
   def start_link do
     Supervisor.start_link(__MODULE__, [])
@@ -8,7 +8,9 @@ defmodule Delivery.PostalCode.Supervisor do
 
   def init(_) do
     children = [
-      worker(Store, [])
+      worker(Store, []),
+      worker(Navigator, []),
+      worker(Cache, []),
     ]
 
     Supervisor.init(children, strategy: :one_for_one)
